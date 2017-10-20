@@ -29,12 +29,13 @@ public class JaugeNaturel {
    *
    * @param vigieMin valeur minimale de l'intervalle de vigie.
    * @param vigieMax valeur maximale de l'intervalle de vigie.
-   * @param depart   valeur initiale de la jauge.
+   * @param depart   valeur initiale de la jauge. 
    */
   public JaugeNaturel(long vigieMin, long vigieMax, long depart) {
     valeur = depart;
     min = vigieMin;
     max = vigieMax;
+    int bite;
     /* Le constructeur d'une classe permet d'initialiser l'etat de l'instance creee.
      * Son nom correspond toujours au nom de la classe. Il n'y a pas de type de retour.
      */
