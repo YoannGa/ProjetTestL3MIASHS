@@ -35,8 +35,6 @@ public class JaugeNaturel {
     valeur = depart;
     min = vigieMin;
     max = vigieMax;
-    int bb;
-    
     /* Le constructeur d'une classe permet d'initialiser l'etat de l'instance creee.
      * Son nom correspond toujours au nom de la classe. Il n'y a pas de type de retour.
      */
@@ -73,6 +71,8 @@ public class JaugeNaturel {
     return valeur <= min;
   }
 
+  
+  
   /**
    * Incrémente le niveau d'une unité.
    * L'état peut devenir supérieur à vigieMax.
@@ -85,7 +85,8 @@ public class JaugeNaturel {
    * Décrémente le niveau d'une unité.
    * L'état peut devenir inférieur à la vigieMin.
    */
-  public void decrementer() {
+  public void decrementer() {	
+	  valeur--;
   }
 
 

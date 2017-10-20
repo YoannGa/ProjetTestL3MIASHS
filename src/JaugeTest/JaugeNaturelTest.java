@@ -8,42 +8,46 @@ import org.junit.Test;
 
 public class JaugeNaturelTest {
 	
-	JaugeNaturel jaj;
+	JaugeNaturel jaV;
+	JaugeNaturel jaR;
+	JaugeNaturel jaB;
 	
 	@Before
 	public void setUp() throws Exception {
-		jaj = new JaugeNaturel(0, 50, 50);
-		
+		jaV = new JaugeNaturel(2, 0, 10);
+		jaR = new JaugeNaturel(22, 10, 20);
+		jaB = new JaugeNaturel(14, 20, 30);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		
-	}
+	
 
 	@Test
-	public void testJaugeNaturel() {
-		fail("Not yet implemented");
+	public void testDansIntervalle() {
+		assert !jaV.estBleu() : "Ne doit pas etre bleu";
+		assert jaV.estVert() : "Doit être vert";
+		assert !jaV.estRouge() : "Ne doit pas être rouge";
 	}
 
 	@Test
 	public void testEstRouge() {
-		fail("Not yet implemented");
+		assert jaV.estRouge() : "Doit être rouge";
 	}
 
 	@Test
 	public void testEstVert() {
-		fail("Not yet implemented");
+		assert jaV.estVert() : "Doit être vert";
 	}
 
 	@Test
 	public void testEstBleu() {
-		fail("Not yet implemented");
+		assert jaV.estBleu() : "Doit être bleu";
 	}
 
 	@Test
 	public void testIncrementer() {
-		fail("Not yet implemented");
+		assert !jaV.estBleu() : "Ne doit pas etre bleu";
+		assert !jaV.estVert() : "Ne doit pas être vert";
+		assert jaV.estRouge() : "Doit être rouge";
 	}
 
 	@Test
