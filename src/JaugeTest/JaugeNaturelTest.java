@@ -2,61 +2,138 @@ package JaugeTest;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class JaugeNaturelTest {
-	
-	JaugeNaturel jaV;
-	JaugeNaturel jaR;
-	JaugeNaturel jaB1;
-	
-	@Before
-	public void setUp() throws Exception {
-		jaV = new JaugeNaturel(2, 0, 10);
-		jaR = new JaugeNaturel(22, 10, 20);
-		jaB1 = new JaugeNaturel(14, 20, 30);
-	}
-
-
-	@Test
-	public void testDansIntervalle() {
-		assert !jaV.estBleu() : "Ne doit pas etre bleu";
-		assert jaV.estVert() : "Doit être vert";
-		assert !jaV.estRouge() : "Ne doit pas être rouge";
-	}
 
 	@Test
 	public void testEstRouge() {
-		assert jaV.estRouge() : "Doit être rouge";
+		JaugeNaturel jn = new JaugeNaturel(0, 100, 200);
+		assertTrue(jn.estRouge());
 	}
 
 	@Test
 	public void testEstVert() {
-		assert jaV.estVert() : "Doit être vert";
+		JaugeNaturel jn = new JaugeNaturel(0, 100, 50);
+		assertTrue(jn.estVert());
 	}
 
 	@Test
 	public void testEstBleu() {
-		assert jaV.estBleu() : "Doit être bleu";
+		JaugeNaturel jn = new JaugeNaturel(0, 100, -50);
+		assertTrue(jn.estBleu());
 	}
 
 	@Test
 	public void testIncrementer() {
-		assert !jaV.estBleu() : "Ne doit pas etre bleu";
-		assert !jaV.estVert() : "Ne doit pas être vert";
-		assert jaV.estRouge() : "Doit être rouge";
+		JaugeNaturel jn = new JaugeNaturel(0, 100, 99);
+		jn.incrementer();
+		assertTrue(jn.estRouge());
 	}
 
 	@Test
 	public void testDecrementer() {
-		fail("Not yet implemented");
+		JaugeNaturel jn = new JaugeNaturel(0, 100, 100);
+		jn.decrementer();
+		assertTrue(jn.estVert());
 	}
 
 	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public void testDansIntervalle() {
+		JaugeNaturel jn = new JaugeNaturel(-345, 67899, 100);
+		assertTrue(jn.estVert());
+		assertFalse(jn.estBleu());
+		assertFalse(jn.estRouge());
+	}
+	
+	@Test
+	public void testDeplacement() {
+		JaugeNaturel jn = new JaugeNaturel(0, 67899, 2);
+		
+		jn.decrementer();
+		jn.decrementer();
+		
+		assertTrue(jn.estBleu());
+		assertFalse(jn.estVert());
+		assertFalse(jn.estRouge());
+		
+		jn.incrementer();
+		jn.incrementer();
+		
+		assertTrue(jn.estVert());
+		assertFalse(jn.estBleu());
+		assertFalse(jn.estRouge());
+	}
+	
+	@Test
+	public void testInferieurIntervalle() {
+		JaugeNaturel jn1 = new JaugeNaturel(10, 67899, 0);
+		assertTrue(jn1.estBleu());
+		assertFalse(jn1.estVert());
+		assertFalse(jn1.estRouge());
+		
+		JaugeNaturel jn2 = new JaugeNaturel(0, 67899, 0);
+		assertTrue(jn2.estBleu());
+		assertFalse(jn2.estVert());
+		assertFalse(jn2.estRouge());
+		
+	}
+	
+	@Test
+	public void testLimiteVigieMaxInferieurVigieMin() {
+		JaugeNaturel jn = new JaugeNaturel(100, 0, 50);
+		assertTrue(jn.estBleu() && jn.estRouge());
+		assertFalse(jn.estVert());
+	}
+
+	@Test
+	public void testMaxEgaleMin() {
+		JaugeNaturel jn1 = new JaugeNaturel(100, 100, 200);
+		assertTrue(jn1.estRouge());
+		assertFalse(jn1.estVert());
+		assertFalse(jn1.estBleu());
+		
+		JaugeNaturel jn2 = new JaugeNaturel(100, 100, 100);
+		assertTrue(jn2.estRouge());
+		assertTrue(jn2.estBleu());
+		assertFalse(jn2.estVert());
+	}
+	
+	@Test
+	public void testSuperieurIntervalle() {
+		JaugeNaturel jn1 = new JaugeNaturel(100, 200, 300);
+		assertTrue(jn1.estRouge());
+		assertFalse(jn1.estBleu());
+		assertFalse(jn1.estVert());
+		
+		JaugeNaturel jn2 = new JaugeNaturel(100, 200, 200);
+		assertTrue(jn2.estRouge());
+		assertFalse(jn2.estBleu());
+		assertFalse(jn2.estVert());
+	}
+	
+	public void run() {
+		System.out.print("Test de JaugeNaturel:");
+
+		System.out.print(".");
+		testDansIntervalle();
+		
+		System.out.print(".");
+		testDeplacement();
+
+		System.out.print(".");
+		testInferieurIntervalle();
+		
+		System.out.print(".");
+		testLimiteVigieMaxInferieurVigieMin();
+
+		System.out.print(".");
+		testMaxEgaleMin();
+
+		System.out.print(".");
+		testSuperieurIntervalle();
+
+		System.out.println("OK");
 	}
 
 }
