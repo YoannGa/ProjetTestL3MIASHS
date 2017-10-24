@@ -2,12 +2,10 @@
  * 
  */
 package EtatPassager;
-
 /**
- * @author clarisse.lou
+ * @author clarisse.lou & Yoann GATHIGNOL
  *
  */
-
 /**
  * Cette classe représente l'état d'un passager dans un transport.
  * Il y a un état à l'exterieur du transport (dehors) et deux états à 
@@ -45,7 +43,7 @@ public class EtatPassager {
    * @return vrai si instanciation avec DEHORS;
    */
   public boolean estExterieur() {
-    return false;
+	  return monEtat == Etat.DEHORS;
   }
 
   /**
@@ -54,7 +52,7 @@ public class EtatPassager {
    * @return vrai si instanciation avec ASSIS;
    */
   public boolean estAssis() {
-    return monEtat != Etat.ASSIS;
+    return monEtat == Etat.ASSIS;
   }
 
   /**
@@ -63,7 +61,7 @@ public class EtatPassager {
    * @return vrai si instanciation avec DEBOUT;
    */
   public boolean estDebout() {
-    return false;
+	  return monEtat == Etat.DEBOUT;
   }
 
   /**
@@ -72,7 +70,7 @@ public class EtatPassager {
    * @return vrai si instanciation avec ASSIS ou DEBOUT.
    */
   public boolean estInterieur() {
-    return false;
+	  return !this.estExterieur();
   }
 
 

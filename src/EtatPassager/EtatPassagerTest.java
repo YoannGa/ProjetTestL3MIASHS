@@ -18,7 +18,7 @@ public class EtatPassagerTest {
 	
 	@Test
 	public void testDebout() {
-		EtatPassager e = new EtatPassager(Etat.ASSIS);
+		EtatPassager e = new EtatPassager(Etat.DEBOUT);
 		assertFalse(e.estExterieur());
 		assertFalse(e.estAssis());
 		assertTrue(e.estDebout());
@@ -26,7 +26,7 @@ public class EtatPassagerTest {
 	
 	@Test
 	public void testExterieur() {
-		EtatPassager e = new EtatPassager(Etat.ASSIS);
+		EtatPassager e = new EtatPassager(Etat.DEHORS);
 		assertTrue(e.estExterieur());
 		assertFalse(e.estAssis());
 		assertFalse(e.estDebout());
