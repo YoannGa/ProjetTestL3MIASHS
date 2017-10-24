@@ -23,41 +23,32 @@ public class JaugeNaturelTest {
 
 	@Test
 	public void testDansIntervalle() {
-		assert !jaV.estBleu() : "Ne doit pas etre bleu";
-		assert jaV.estVert() : "Doit être vert";
-		assert !jaV.estRouge() : "Ne doit pas être rouge";
+		assertTrue(!jaV.estBleu());
+		assertTrue(jaV.estVert());
+		assertTrue(!jaV.estRouge());
 	}
 
 	@Test
 	public void testEstRouge() {
-		assert jaV.estRouge() : "Doit être rouge";
+		assertTrue(jaR.estRouge());
 	}
 
 	@Test
 	public void testEstVert() {
-		assert jaV.estVert() : "Doit être vert";
+		assertTrue(jaV.estVert());
 	}
 
 	@Test
 	public void testEstBleu() {
-		assert jaV.estBleu() : "Doit être bleu";
+		assertTrue(jaB.estBleu());
 	}
 
-	@Test
-	public void testIncrementer() {
-		assert !jaV.estBleu() : "Ne doit pas etre bleu";
-		assert !jaV.estVert() : "Ne doit pas être vert";
-		assert jaV.estRouge() : "Doit être rouge";
-	}
 
 	@Test
-	public void testDecrementer() {
-		fail("Not yet implemented");
+	public void testDeplacement() {
+		
 	}
 
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
+	
 
 }
