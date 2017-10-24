@@ -25,7 +25,8 @@ public class JaugeNaturelTest {
 	public void testDansIntervalle() {
 		assertTrue(!jaV.estBleu());
 		assertTrue(jaV.estVert());
-		assertTrue(!jaV.estRouge());
+		assertTrue(!jaV.estRouge() );
+		
 	}
 
 	@Test
