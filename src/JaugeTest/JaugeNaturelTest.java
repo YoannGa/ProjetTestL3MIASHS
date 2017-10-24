@@ -19,7 +19,6 @@ public class JaugeNaturelTest {
 		jaB = new JaugeNaturel(14, 20, 30);
 	}
 
-	
 
 	@Test
 	public void testDansIntervalle() {
