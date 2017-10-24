@@ -10,13 +10,13 @@ public class JaugeNaturelTest {
 	
 	JaugeNaturel jaV;
 	JaugeNaturel jaR;
-	JaugeNaturel jaB;
+	JaugeNaturel jaB1;
 	
 	@Before
 	public void setUp() throws Exception {
 		jaV = new JaugeNaturel(2, 0, 10);
 		jaR = new JaugeNaturel(22, 10, 20);
-		jaB = new JaugeNaturel(14, 20, 30);
+		jaB1 = new JaugeNaturel(14, 20, 30);
 	}
 
 	
