@@ -24,14 +24,14 @@ public class EtatPassagerChaine {
                     /** passager debout à l'intérieur */ DEBOUT,  
                     /** passager à l'extérieur */        DEHORS};
 
-  private final Etat monEtat;
+  private final String monEtat;
 
   /**
    * Construit une instance en précisant l'état du passager.
    * 
    * @param e  valeur de l'état.
    */
-  public EtatPassagerChaine(Etat e) {
+  public EtatPassagerChaine(String e) {
     monEtat = e;
 
     /* Le constructeur d'une classe permet d'initialiser l'etat de l'instance creee.
@@ -46,7 +46,7 @@ public class EtatPassagerChaine {
    * @return vrai si instanciation avec DEHORS;
    */
   public boolean estExterieur() {
-	  return monEtat == Etat.DEHORS;
+	  return monEtat == "DEHORS";
   }
 
   /**
@@ -55,7 +55,7 @@ public class EtatPassagerChaine {
    * @return vrai si instanciation avec ASSIS;
    */
   public boolean estAssis() {
-    return monEtat == Etat.ASSIS;
+    return monEtat == "ASSIS";
   }
 
   /**
@@ -64,7 +64,7 @@ public class EtatPassagerChaine {
    * @return vrai si instanciation avec DEBOUT;
    */
   public boolean estDebout() {
-	  return monEtat == Etat.DEBOUT;
+	  return monEtat == "DEBOUT";
   }
 
   /**
