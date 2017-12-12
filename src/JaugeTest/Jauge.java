@@ -11,9 +11,9 @@ public interface Jauge {
 	 
 
 	  /**
-	   * L'Ã©tat de la jauge est-il vert ?
+	   * L'état de la jauge est-il vert ?
 	   *
-	   * @return vrai si niveau appartient Ã  ]vigieMin, vigieMax[.
+	   * @return vrai si niveau appartient à ]vigieMin, vigieMax[.
 	   *
 	   */
 	  public boolean estVert() ;

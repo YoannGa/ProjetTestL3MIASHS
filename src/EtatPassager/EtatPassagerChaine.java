@@ -3,8 +3,6 @@
  */
 package EtatPassager;
 
-import EtatPassager.EtatPassagerChaine.Etat;
-
 /**
  * @author clarisse.lou & Yoann GATHIGNOL
  *
@@ -16,13 +14,7 @@ import EtatPassager.EtatPassagerChaine.Etat;
  *  
  * Les instances de cette classe sont des objets constants.
  **/
-public class EtatPassagerChaine {
-  /**
-   * Définit les trois états possible d'un passager dans un transport.
-   */
-  public enum Etat {/** passager assis à l'intérieur */  ASSIS, 
-                    /** passager debout à l'intérieur */ DEBOUT,  
-                    /** passager à l'extérieur */        DEHORS};
+public class EtatPassagerChaine implements IEtatPassager {
 
   private final String monEtat;
 
