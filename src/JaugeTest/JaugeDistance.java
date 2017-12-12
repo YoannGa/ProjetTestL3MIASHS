@@ -18,7 +18,7 @@ package JaugeTest;
  * @author georgy
  * @since 2006-2007
  */
-public class JaugeDistance {
+public class JaugeDistance implements Jauge{
   
   private long distMin;
   private long distMax;
@@ -31,13 +31,13 @@ public class JaugeDistance {
    * @param vigieMax valeur maximale de l'intervalle de vigie.
    * @param depart   valeur initiale de la jauge. 
    */
-  public JaugeDistance(long dMin, long dMax) {
+  public JaugeDistance(long min, long max,long valeur) {
    
     /* Le constructeur d'une classe permet d'initialiser l'etat de l'instance creee.
      * Son nom correspond toujours au nom de la classe. Il n'y a pas de type de retour.
      */
-	  this.distMin=dMin;
-	  this.distMax=dMax;	  
+	  this.distMin=valeur - min;
+	  this.distMax=valeur - max;	  
   }
 
 
@@ -48,7 +48,7 @@ public class JaugeDistance {
    *
    */
   public boolean estRouge() {
-    return distMax>0;
+    return distMax>=0;
   }
 
   /**
@@ -68,7 +68,7 @@ public class JaugeDistance {
    * @return vrai si niveau <= vigieMin.
    */
   public boolean estBleu() {
-    return distMin < 0;
+    return distMin <= 0;
   }
 
   

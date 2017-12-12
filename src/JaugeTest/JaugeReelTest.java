@@ -8,7 +8,7 @@ public class JaugeReelTest {
 
 	@Test
 	public void testEstRouge() {
-		JaugeReel jn = new JaugeReel(0, 100, 200);
+		JaugeReel jn = new JaugeReel(0, 100, 100);
 		assertTrue(jn.estRouge());
 	}
 
@@ -35,6 +35,7 @@ public class JaugeReelTest {
 	public void testDecrementer() {
 		JaugeReel jn = new JaugeReel(0, 100, 100);
 		jn.decrementer();
+		
 		assertTrue(jn.estVert());
 	}
 
