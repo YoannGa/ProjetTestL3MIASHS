@@ -89,7 +89,6 @@ public class JaugeNaturel  implements Jauge{
 	  valeur--;
   }
 
-
   /**
    * Cette méthode est héritée de la classe {@link java.lang.Object}.
    * Très utile pour le débogage, elle permet de fournir une

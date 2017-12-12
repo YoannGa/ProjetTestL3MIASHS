@@ -36,10 +36,10 @@ private final float min;
    * @param vigieMax valeur maximale de l'intervalle de vigie.
    * @param depart   valeur initiale de la jauge. 
    */
-  public JaugeReel(float vigieMin, float vigieMax, float depart) {
-    valeur = depart/1000;
-    min = vigieMin/1000;
-    max = vigieMax/1000;
+  public JaugeReel(long vigieMin, long vigieMax, long depart) {
+    valeur = (float)depart/1000;
+    min =  (float)vigieMin/1000;
+    max =  (float)vigieMax/1000;
     /* Le constructeur d'une classe permet d'initialiser l'etat de l'instance creee.
      * Son nom correspond toujours au nom de la classe. Il n'y a pas de type de retour.
      */
@@ -63,8 +63,8 @@ private final float min;
    *
    */
   public boolean estVert() {
-    //return !(estBleu() && estRouge());
-    return valeur > min && valeur < max;
+    return valeur < max && valeur > min;
+   
   }
 
   /**

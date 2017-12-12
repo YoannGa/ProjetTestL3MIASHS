@@ -93,20 +93,9 @@ public class JaugeDistance implements Jauge{
   }
 
 
-  /**
-   * Cette méthode est héritée de la classe {@link java.lang.Object}.
-   * Très utile pour le débogage, elle permet de fournir une
-   * chaîne de caractères correspondant a l'état d'un objet.
-   * <p> Un code par défaut est définit dans
-   * {@link java.lang.Object#toString() la classe Object}
-   * Il faut adapter (redéfinir) le code de cette méthode à chaque classe.
-   *
-   * Pour les chaînes de cararctères, l'opérateur + correspond a la concaténation.
-   * Les valeurs numériques sont alors convertit en ascii.
-   * Si l'état d'une instance de cette classe est min=-456, max=23,
-   * valeur=-7, la concaténation donne la chaîne "<-7 [-456,23]>".
-   */
-  @Override
+ 
+
+@Override
   public String toString() {
     return  " [ Distance du min : "+ distMin + ", Distance du max : " + distMax +" ]";
   }
