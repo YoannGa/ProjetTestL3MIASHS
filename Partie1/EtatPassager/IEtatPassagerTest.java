@@ -14,31 +14,34 @@ public class IEtatPassagerTest {
 	 * true = EtatPassagerchaine;
 	 * false = EtatPassager;
 	 */
-	private IEtatPassager creerAssis(boolean e) {
-		if (e) {
+	private IEtatPassager creerAssis(String e) {
+		if (e == "EtatPassagerChaine") {
 			return new EtatPassagerChaine("ASSIS");
-		} else {
+		} else if (e == "EtatPassager") {
 			return new EtatPassager(Etat.ASSIS);
 		}
+		return null;
 	}
-	private IEtatPassager creerDebout(boolean e) {
-		if (e) {
+	private IEtatPassager creerDebout(String e) {
+		if (e == "EtatPassagerChaine") {
 			return new EtatPassagerChaine("DEBOUT");
-		} else {
+		} else if (e == "EtatPassager") {
 			return new EtatPassager(Etat.DEBOUT);
 		}
+		return null;
 	}
-	private IEtatPassager creerDehors(boolean e) {
-		if (e) {
+	private IEtatPassager creerDehors(String e) {
+		if (e == "EtatPassagerChaine") {
 			return new EtatPassagerChaine("DEHORS");
-		} else {
+		} else if (e == "EtatPassager") {
 			return new EtatPassager(Etat.DEHORS);
 		}
+		return null;
 	}
 	
 	@Test
 	public void testAssis() {
-		IEtatPassager e = creerAssis(true);
+		IEtatPassager e = creerAssis("EtatPassagerChaine");
 		assertFalse(e.estExterieur());
 		assertTrue(e.estAssis());
 		assertFalse(e.estDebout());
@@ -46,7 +49,7 @@ public class IEtatPassagerTest {
 	
 	@Test
 	public void testDebout() {
-		IEtatPassager e = creerDebout(true);
+		IEtatPassager e = creerDebout("EtatPassagerChaine");
 		assertFalse(e.estExterieur());
 		assertFalse(e.estAssis());
 		assertTrue(e.estDebout());
@@ -54,7 +57,7 @@ public class IEtatPassagerTest {
 	
 	@Test
 	public void testExterieur() {
-		IEtatPassager e = creerDehors(true);
+		IEtatPassager e = creerDehors("EtatPassager");
 		assertTrue(e.estExterieur());
 		assertFalse(e.estAssis());
 		assertFalse(e.estDebout());
@@ -62,13 +65,13 @@ public class IEtatPassagerTest {
 	
 	@Test
 	public void testEstInterieur() {
-		IEtatPassager e1 = creerAssis(true);
+		IEtatPassager e1 = creerAssis("EtatPassagerChaine");
 		assertTrue(e1.estInterieur());
 		
-		IEtatPassager e2 = creerDebout(true);
+		IEtatPassager e2 = creerDebout("EtatPassagerChaine");
 		assertTrue(e2.estInterieur());
 		
-		IEtatPassager e3 = creerDehors(true);
+		IEtatPassager e3 = creerDehors("EtatPassagerChaine");
 		assertFalse(e3.estInterieur());
 	}
 	
