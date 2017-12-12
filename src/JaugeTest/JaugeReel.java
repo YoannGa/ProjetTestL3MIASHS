@@ -18,10 +18,15 @@ package JaugeTest;
  * @author georgy
  * @since 2006-2007
  */
-public class JaugeReel {
-  private double valeur;
-  private final double min;
-  private final double max;
+public class JaugeReel implements Jauge{
+  private float valeur;
+  
+  
+  
+ 
+
+private final float min;
+  private final float max;
 
   /**
    * Construit une instance en précisant la valeur de départ de la Jauge
@@ -31,7 +36,7 @@ public class JaugeReel {
    * @param vigieMax valeur maximale de l'intervalle de vigie.
    * @param depart   valeur initiale de la jauge. 
    */
-  public JaugeReel(long vigieMin, long vigieMax, long depart) {
+  public JaugeReel(float vigieMin, float vigieMax, float depart) {
     valeur = depart/1000;
     min = vigieMin/1000;
     max = vigieMax/1000;
@@ -78,7 +83,7 @@ public class JaugeReel {
    * L'état peut devenir supérieur à vigieMax.
    */
   public void incrementer() {
-    valeur++;
+    valeur= (float)valeur + (float)0.001;
   }
 
   /**
@@ -86,7 +91,7 @@ public class JaugeReel {
    * L'état peut devenir inférieur à la vigieMin.
    */
   public void decrementer() {	
-	  valeur--;
+	  valeur= (float)valeur-(float)0.001;
   }
 
 
