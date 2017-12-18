@@ -69,5 +69,12 @@ public class PassagerStandard implements Usager, Passager {
 			}
 		}
 	}
+	
+	@Override 
+	public String toString(){
+		// A FAIRE
+		return null;
+		
+	}
 
 }

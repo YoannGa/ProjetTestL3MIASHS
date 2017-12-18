@@ -14,7 +14,7 @@ public class Autobus implements Transport, Bus {
 	public Autobus(int assises, int debout) {
 		passagers = new ArrayList<>();
 		nbPlacesAssises = new JaugeNaturel(0, assises, assises);
-		nbPlacesAssises = new JaugeNaturel(0, debout, debout);
+		nbPlacesDebout = new JaugeNaturel(0, debout, debout);
 		arretActuel = 0; 
 	}
 	
@@ -80,6 +80,11 @@ public class Autobus implements Transport, Bus {
 		}
 	}
 	
-	
+	@Override 
+	public String toString(){
+		// A FAIRE
+		return null;
+		
+	}
 
 }
